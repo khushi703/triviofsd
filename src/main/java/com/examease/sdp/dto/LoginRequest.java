@@ -1,4 +1,4 @@
-package com.examease.sdp.DTO;
+package com.examease.sdp.dto;
 
 public class LoginRequest {
     private String email;

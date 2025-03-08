@@ -1,7 +1,7 @@
 package com.examease.sdp.controller;
 
-import com.examease.sdp.DTO.ExamResultResponse;
-import com.examease.sdp.DTO.ExamSubmissionRequest;
+import com.examease.sdp.dto.ExamResultResponse;
+import com.examease.sdp.dto.ExamSubmissionRequest;
 import com.examease.sdp.model.*;
 import com.examease.sdp.repository.SubmissionRepo;
 import com.examease.sdp.service.ExamService;

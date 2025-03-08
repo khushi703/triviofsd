@@ -1,8 +1,9 @@
-package com.examease.sdp.security;
+package com.examease.sdp.controller;
 
-import com.examease.sdp.DTO.RegisterRequest;
+import com.examease.sdp.dto.RegisterRequest;
 import com.examease.sdp.model.MyUser;
 import com.examease.sdp.repository.MyUserRepo;
+import com.examease.sdp.service.EmailService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.examease.sdp.security;
+package com.examease.sdp.controller;
 
 import com.examease.sdp.model.MyUser;
 import com.examease.sdp.repository.MyUserRepo;

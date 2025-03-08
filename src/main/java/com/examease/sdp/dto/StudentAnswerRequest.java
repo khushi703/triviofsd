@@ -1,4 +1,4 @@
-    package com.examease.sdp.DTO;
+    package com.examease.sdp.dto;
 
     public class StudentAnswerRequest {
         private Long questionId;
