@@ -61,7 +61,7 @@ h1 {
 
 input:focus {
     outline: none;
-    border-color: #3498db;
+    border-color: #59a3eb;
     box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
 }
 
@@ -85,7 +85,7 @@ input:focus {
 
 .checkbox-group label {
     display: flex;
-    align-items: right;
+    /*align-items: right;*/
     font-size: 14px;
     color: #fff;
 }

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { ExamCard } from "../components/ExamCard";
 import axiosInstance from "../axiosConfig"; // Import axios instance
 import "../css/studentdashboard.css";
-import Sidenav from "./Sidenav";
+import HeroImage from "../assets/Trivio.png";
+// import Sidenav from "./Sidenav";
 import Header from "./header";
 
 export default function StudentHome() {
@@ -35,7 +36,7 @@ export default function StudentHome() {
       <Header />
       <div className="home-container">
         <aside className="home-sidebar">
-          <Sidenav />
+          {/*<Sidenav />*/}
         </aside>
         <div className="student">
           <div className="home-content">

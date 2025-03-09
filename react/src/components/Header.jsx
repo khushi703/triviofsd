@@ -1,4 +1,6 @@
 import "../css/header.css"
+import ProfileImage from "../assets/react.svg";
+import React from "react";
 
 export default function Header() {
   return (
@@ -7,19 +9,15 @@ export default function Header() {
         <h1 className="header-title">Trivio</h1>
       </div>
       <div className="header-right">
-        <div className="header-search">
-          <input type="search" placeholder="Search..." className="search-input" />
-        </div>
+        {/*<div className="header-search">*/}
+        {/*  <input type="search" placeholder="Search..." className="search-input" />*/}
+        {/*</div>*/}
         <div className="header-actions">
           <button className="header-button">
           </button>
-          <div className="user-profile">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-01-29%20182701-WhnWALtiOcw475OJIPXBkymVdC8zim.png"
-              alt="Profile"
-              className="profile-image"
-            />
-          </div>
+            <div className="user-profile">
+                <img src={ProfileImage} alt="Profile"/>
+            </div>
         </div>
       </div>
     </header>

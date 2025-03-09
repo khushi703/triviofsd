@@ -17,7 +17,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
-    background: #1f2123; /* Dark background */
+    background: #282b2d7d; /* Dark background */
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
