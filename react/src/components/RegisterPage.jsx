@@ -46,15 +46,15 @@ const RegisterPage = () => {
             alert(error);
         }
     };
-    const handleGoogleSignIn = async () => {
-        try {
-            const googleOAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=435399769597-9imjl67qptanmrq6deach9ocicpmfrq3.apps.googleusercontent.com&redirect_uri=http://localhost:5173/api/auth/roleselect&response_type=code&scope=openid%20profile%20email`;
-            window.location.href = googleOAuthUrl;
-        } catch (error) {
-            console.error("Google sign-in failed:", error);
-            alert("Failed to sign in with Google. Please try again.");
-        }
-    };
+    // const handleGoogleSignIn = async () => {
+    //     try {
+    //         const googleOAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=435399769597-9imjl67qptanmrq6deach9ocicpmfrq3.apps.googleusercontent.com&redirect_uri=http://localhost:5173/api/auth/roleselect&response_type=code&scope=openid%20profile%20email`;
+    //         window.location.href = googleOAuthUrl;
+    //     } catch (error) {
+    //         console.error("Google sign-in failed:", error);
+    //         alert("Failed to sign in with Google. Please try again.");
+    //     }
+    // };
 
     return (
 
@@ -97,11 +97,7 @@ const RegisterPage = () => {
 
         {/* Buttons */}
         <button type="submit">Sign Up</button>
-        <div className="separator">
-                    <span>or</span>
-                </div>
-        <button type="button" className='social-login' onClick={handleGoogleSignIn}>Google</button>
-        <p className="create-account">Already have an acount in ExamEase? <a href="/login">Login</a></p>
+        <p className="create-account">Already have an acount in Trivio? <a href="/login">Login</a></p>
     </form>
 </div>
 </div>

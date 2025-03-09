@@ -1,64 +1,51 @@
-.body {
+/* General Styles */
+body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #000, #181b2c);
-    color: white;
+    background: #1f2123; /* Dark background */
+    color: #aeafb3; /* Light gray for text */
 }
 
 /* Navbar */
-/* Navbar */
 .navbar {
     width: 100%;
-    position: fixed; /* Keep it at the top */
+    position: fixed;
     top: 0;
     left: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 50px;
-    background: rgb(16 13 39 / 44%);
-    z-index: 1000; /* Ensure it stays above other elements */
+    background: #1f2123; /* Dark background */
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
-
 
 .logo {
     font-size: 30px;
     font-weight: bold;
+    color: #59a3eb; /* Blue for the logo */
 }
 
-/* Adjusted Navbar Links */
 .nav-links {
     display: flex;
     gap: 20px;
-    margin-left: 950px;
+    margin-right: 100px;
 }
 
 .nav-links a {
-    color: white;
+    color: #aeafb3; /* Light gray for links */
     text-decoration: none;
     font-size: 16px;
-}
-
-#loginbtn {
-    margin-right: 20px;
-    border: 1px solid white;
     cursor: pointer;
-    background-color: #ff6f47;
-    color: white;
-    
-    margin-right: 70px;
-    font-size: 17px;
-    height: 40px;
-    width: 90px;
-    border-radius: 5px;
+    transition: color 0.3s ease;
+
+
 }
 
-#loginbtn:hover {
-    background-color: #c94925;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    transition: 0.3s ease-in-out;
+.nav-links a:hover {
+    color: #59a3eb; /* Blue on hover */
 }
 
 /* Hero Section */
@@ -72,7 +59,6 @@
     position: relative;
 }
 
-/* Hero Content */
 .hero-content {
     display: flex;
     align-items: center;
@@ -82,32 +68,29 @@
     padding: 50px 0;
 }
 
-/* Hero Text */
 .hero-text {
     max-width: 50%;
 }
 
 .hero-text h1 {
-    font-size: 60px;
+    margin-top: auto;
+    font-size: 145px;
     margin-bottom: 20px;
+    margin-left: 80px;
+    color: #59a3eb; /* Blue for the heading */
 }
 
 .hero-text p {
-    font-size: 16px;
+    font-size: 40px;
     line-height: 1.5;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+    margin-left: 80px;
+    color: #aeafb3; /* Light gray for the paragraph */
 }
 
 /* Buttons */
-.buttons {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.sign-up,
 #try-it {
-    background-color: #ff6f47;
+    background-color: #59a3eb; /* Blue for the button */
     color: white;
     height: 40px;
     width: 120px;
@@ -115,149 +98,39 @@
     border-radius: 20px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 80px;
 }
 
-.sign-up:hover,
 #try-it:hover {
-    background-color: #c94925;
-    color: #ffffff;
-    border: 2px solid #ffffff;
-    transition: 0.3s ease-in-out;
+    background-color: #3a7bbf; /* Darker blue on hover */
 }
 
-/* Fixed Hero Image */
+/* Hero Image */
 .hero-image {
     max-width: 40%;
-    position: absolute;
-    top: 120px;
-    right: 50px;
+    transform: scale(1.8);
 }
 
 .hero-image img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-top: 70px;
 }
 
-/* Steps Section */
-.steps-container {
+/* Footer */
+.footer {
     text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(to bottom, #000, #181b2c);
-    min-height: 100vh;
+    padding: 20px;
+    background: #1f2123; /* Dark background */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
 
-.steps-title {
-    font-size: 36px;
-    font-weight: bold;
-    color: #ffffff;
-    margin-bottom: 40px;
-    position: relative;
-    display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.steps-title::after {
-    content: "";
-    width: 60%;
-    height: 3px;
-    background: #ff7043;
-    position: absolute;
-    left: 50%;
-    bottom: -8px;
-    transform: translateX(-50%);
-    border-radius: 5px;
-}
-
-/* Steps Grid */
-.steps-grid {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding-top: 20px;
-}
-
-/* Step Card */
-.step-card {
-    background: linear-gradient(to bottom, #000, #181b2c);
-    border: 1px solid #444;
-    box-shadow: 0 8px 20px rgba(18, 12, 26, 0.3);
-    color: white;
-    padding: 25px;
-    border-radius: 15px;
-    width: 280px;
-    text-align: center;
-    transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.5s ease;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.step-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 25px rgba(42, 44, 59, 0.35);
-    background: linear-gradient(145deg, #000000, #1f1f50);
-}
-
-/* Step Icon */
-.step-icon {
-    font-size: 40px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ff6f47;
-    border: 2px solid #ff8a65;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin: auto;
-    transition: transform 0.5s ease;
-}
-
-.step-card:hover .step-icon {
-    transform: rotate(360deg);
-}
-
-/* Step Title */
-.step-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Step Points */
-.step-points {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.step-point {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 5px;
+.footer p {
+    margin: 0;
     font-size: 14px;
-    transition: background 0.5s ease;
-}
-
-.step-card:hover .step-point {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .steps-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .step-card {
-        width: 90%;
-    }
+    color: #aeafb3; /* Light gray for footer text */
 }

@@ -67,15 +67,13 @@ h1 {
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: #3498db;
+    color: #000000;
     cursor: pointer;
     font-size: 14px;
     transition: color 0.3s ease;
 }
 
-#show-password:hover {
-    color: #2980b9; /* Slightly darker blue on hover */
-}
+
 
 
 

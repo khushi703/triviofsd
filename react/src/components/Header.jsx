@@ -4,7 +4,7 @@ export default function Header() {
   return (
     <header className="app-header">
       <div className="header-left">
-        <h1 className="header-title">ExamEase</h1>
+        <h1 className="header-title">Trivio</h1>
       </div>
       <div className="header-right">
         <div className="header-search">

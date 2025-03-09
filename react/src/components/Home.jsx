@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../css/home.css";
-import HeroImage from "../assets/std-Photoroom.png";
-import ClassMarkerSteps from "../components/ClassMarkerSteps";
+import HeroImage from "../assets/Trivio.png"; // Replace with your 3D character image
 import { useNavigate } from "react-router-dom";
-import LoginPage from "./LoginPage";
 
 const Home = () => {
     const text = "Learning Made Easy";
@@ -20,7 +18,7 @@ const Home = () => {
                 setDisplayText((prev) => prev + text[index]);
                 setIndex(index + 1);
             }, 150);
-        } else if (isDeleting && index > 1) { 
+        } else if (isDeleting && index > 1) {
             // Deleting effect but never remove "L"
             timeout = setTimeout(() => {
                 setDisplayText((prev) => prev.slice(0, -1));
@@ -28,7 +26,7 @@ const Home = () => {
             }, 100);
         } else if (index === text.length && !isDeleting) {
             timeout = setTimeout(() => setIsDeleting(true), 1000);
-        } else if (index === 1 && isDeleting) { 
+        } else if (index === 1 && isDeleting) {
             // Reset but keep "L"
             setIsDeleting(false);
         }
@@ -37,36 +35,39 @@ const Home = () => {
 
     return (
         <div>
+            {/* Navigation Bar */}
+            <nav className="navbar">
+                <div className="logo">Trivio</div>
+                <div className="nav-links">
+                    <a href="#" onClick={() => navigate("/register")}>Sign Up</a>
+                    <a href="#" onClick={() => navigate("/login")}>Login</a>
+
+                </div>
+            </nav>
+
+            {/* Main Content */}
             <div className="hero-container">
-                <nav className="navbar">
-                    <div className="logo">ExamEase</div>
-                    <div className="nav-links">
-                        <a href="#">Exams</a>
-                        <a href="#">Benefits</a>
-                        <a href="#">About</a>
-                        <a href="#">Contact</a>
-                    </div>
-                    <button className="sign-in" id="loginbtn" onClick={()=>{navigate("/login")}}>Log In</button>
-                </nav>
                 <div className="hero-content">
+                    {/* Left Side: TRIVIO with Tagline and Sign Up Button */}
                     <div className="hero-text">
-                        <h1>{displayText}</h1>
-                        <p id="hero-para">
-                            ExamEase is an online exam system that delivers exam management,
-                            question bank management, automated grading, an analytical dashboard, and more...
-                        </p>
+                        <h1>Trivio</h1>
+                        <p id="hero-para">Unlock Knowledge, One Question at a Time!</p>
                         <div className="btn-try">
-                            <button id="try-it"onClick={()=>{navigate("/register")}}>Sign Up</button>
+                            <button id="try-it" onClick={() => navigate("/register")}>Sign Up</button>
                         </div>
                     </div>
+
+                    {/* Right Side: 3D Character */}
                     <div className="hero-image">
-                        <img src={HeroImage} alt="Exam Illustration" />
+                        <img src={HeroImage} alt="3D Character" />
                     </div>
                 </div>
             </div>
-            <div id="classmarkersteps">
-                <ClassMarkerSteps />
-            </div>
+
+            {/* Footer */}
+            <footer className="footer">
+                <p>Created by @khushiZalavadiya & @omunadkat</p>
+            </footer>
         </div>
     );
 };
