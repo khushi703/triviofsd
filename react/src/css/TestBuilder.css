@@ -22,7 +22,6 @@ body {
   /* Sidebar Styles */
   .sidebar {
     width: 450px;
-    background-color: #0a0d14;
     color: white;
     padding: 20px;
     display: flex;

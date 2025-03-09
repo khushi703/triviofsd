@@ -81,12 +81,12 @@ import "../css/ExamInterface.css";
   
   return (
     <div id="exam-interface">
-      <header className="aheader">
-        <div className="header-right">
-          <div className="timer">{new Date(timeLeft * 1000).toISOString().substr(11, 8)}</div>
-          <button className="end-test-btn" onClick={submitExam}>End test</button>
-        </div>
-      </header>
+      {/*<header className="aheader">*/}
+      {/*  <div className="header-right">*/}
+      {/*    /!*<div className="timer">{new Date(timeLeft * 1000).toISOString().substr(11, 8)}</div>*!/*/}
+      {/*    <button className="end-test-btn" onClick={submitExam}>End test</button>*/}
+      {/*  </div>*/}
+      {/*</header>*/}
 
       <div className="container">
         <div className="amain-content">
@@ -158,17 +158,19 @@ import "../css/ExamInterface.css";
               <h3 className="sidebar-title">Exam Questions</h3>
               <div className="question-grid">
                 {questions.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`question-btn ${currentQuestionIndex === index ? "current" : ""} ${answers.some(a => a.questionId === questions[index].id) ? "answered" : ""} ${markedQuestions.includes(index) ? "marked" : ""}`}
-                    onClick={() => {
-                      setCurrentQuestionIndex(index);
-                      setVisitedQuestions((prev) => [...new Set([...prev, index])]);
-                    }}
-                  >
-                    {index + 1}
-                  </button>
+                    <button
+                        key={index}
+                        className={`question-btn ${currentQuestionIndex === index ? "current" : ""} ${answers.some(a => a.questionId === questions[index].id) ? "answered" : ""} ${markedQuestions.includes(index) ? "marked" : ""}`}
+                        onClick={() => {
+                          setCurrentQuestionIndex(index);
+                          setVisitedQuestions((prev) => [...new Set([...prev, index])]);
+                        }}
+                    >
+                      {index + 1}
+                    </button>
+
                 ))}
+                <button className="end-test-btn" onClick={submitExam}>End test</button>
               </div>
             </div>
           </div>
