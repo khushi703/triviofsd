@@ -15,6 +15,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.web.cors.CorsConfigurationSource;
+
+import java.util.List;
 
 @Configuration
 public class SecurityConfiguration {
@@ -29,18 +32,27 @@ public class SecurityConfiguration {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // CORS configuration
-        http.cors(cors -> cors.configurationSource(corsConfigurationSource()))
-                .csrf(csrf -> csrf.disable())  // Disable CSRF as you are using JWT
+        http
+                .cors(cors -> cors.configurationSource(corsConfigurationSource())) // CORS settings
+                .csrf(csrf -> csrf.disable())  // Disable CSRF for JWT-based authentication
                 .authorizeHttpRequests(auth -> {
-                    auth.requestMatchers("/authenticate", "/api/auth/**", "/register/user", "/css/**","/verify-email").permitAll(); // Permit authentication and registration
-                    auth.requestMatchers("/admin/**").hasRole("ADMIN"); // Role-based access
-                    auth.requestMatchers("/user/**").hasRole("USER");
-                    auth.anyRequest().authenticated(); // All other requests require authentication
-                })
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Disable session as JWT is stateless
-                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)  // Add JWT filter to the chain
+                    auth.requestMatchers(
+                            "/authenticate",
+                            "/api/auth/**",
+                            "/register/user",
+                            "/css/**",
+                            "/verify-email"
+                    ).permitAll(); // Public Endpoints
 
+                    auth.requestMatchers("/api/exams/**").authenticated(); // Ensure users are authenticated for exam endpoints
+
+                    auth.requestMatchers("/admin/**").hasRole("ADMIN"); // Restrict to ADMIN role
+                    auth.requestMatchers("/user/**").hasRole("USER"); // Restrict to USER role
+
+                    auth.anyRequest().authenticated(); // Other requests require authentication
+                })
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Stateless session
+                .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class) // Add JWT filter
                 .logout(logout -> logout.permitAll());
 
         return http.build();
@@ -64,15 +76,16 @@ public class SecurityConfiguration {
         return authConfig.getAuthenticationManager();
     }
 
-    // CORS configuration bean
+    // CORS Configuration
     @Bean
-    public UrlBasedCorsConfigurationSource corsConfigurationSource() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+    public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:5173");  // Frontend allowed origin
-        config.addAllowedMethod("*");  // Allow all HTTP methods
-        config.addAllowedHeader("*");  // Allow all headers
-        config.setAllowCredentials(true);  // Allow credentials (cookies, authorization headers)
+        config.setAllowedOrigins(List.of("http://localhost:5173")); // Adjust frontend URL if needed
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedHeaders(List.of("*"));
+        config.setAllowCredentials(true);
+
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
         return source;
     }
