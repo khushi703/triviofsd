@@ -127,12 +127,12 @@ const ExamInterface = () => {
                   <p>Loading questions...</p>
               )}
               <div className="navigation-buttons">
-                <button className="nav-btn" onClick={() => switchQuestion(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>
-                  Previous
-                </button>
-                <button className="mark-btn" onClick={() => setMarkedQuestions((prev) => prev.includes(currentQuestionIndex) ? prev.filter((q) => q !== currentQuestionIndex) : [...prev, currentQuestionIndex])}>
-                  {markedQuestions.includes(currentQuestionIndex) ? "Unmark" : "Mark"}
-                </button>
+                {/*<button className="nav-btn" onClick={() => switchQuestion(Math.max(currentQuestionIndex - 1, 0))} disabled={currentQuestionIndex === 0}>*/}
+                {/*  pre*/}
+                {/*</button>*/}
+                {/*<button className="mark-btn" onClick={() => setMarkedQuestions((prev) => prev.includes(currentQuestionIndex) ? prev.filter((q) => q !== currentQuestionIndex) : [...prev, currentQuestionIndex])}>*/}
+                {/*  {markedQuestions.includes(currentQuestionIndex) ? "Unmark" : "Mark"}*/}
+                {/*</button>*/}
                 <button className="save-next-btn" onClick={() => switchQuestion(Math.min(currentQuestionIndex + 1, questions.length - 1))} disabled={currentQuestionIndex >= questions.length - 1}>
                   Save & Next
                 </button>
@@ -155,7 +155,7 @@ const ExamInterface = () => {
                       </button>
                   ))}
                   <button className="end-test-btn" onClick={submitExam}>
-                    End test
+                    Result
                   </button>
                 </div>
               </div>

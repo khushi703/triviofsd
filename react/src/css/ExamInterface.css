@@ -45,8 +45,8 @@
 }
 
 .question-card {
-    background-color: #33415500; /* Dark background for cards */
-    border: 1px solid #ffffff; /* Subtle border for contrast */
+    background-color: #293d5136; /* Dark background for cards */
+    /*border: 1px solid #ffffff; !* Subtle border for contrast *!*/
     border-radius: 0.75rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5); /* Stronger shadow for dark theme */
     padding: 1.5rem;
@@ -177,6 +177,8 @@
 
 /* Sidebar Styles */
 .sidebar {
+
+    background-color: #293d5136;
     display: flex;
     height: fit-content;
     flex-direction: column;
@@ -187,8 +189,8 @@
 
 .sidebar-card {
 
-    border: 1px solid #ffffff;
-    border-radius: 0.75rem;
+    /*border: 1px solid #ffffff;*/
+    /*border-radius: 0.75rem;*/
     padding: 0.5rem;
     height: 550px;
     color: #e2e8f0;

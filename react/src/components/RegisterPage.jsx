@@ -87,10 +87,10 @@ const RegisterPage = () => {
             <label>Select Role</label>
             <div className="checkbox-group">
                 <label>
-                    <input type="checkbox" name="role" value="USER" onChange={handleChange} /> USER
+                    <input type="checkbox" name="role" value="USER" onChange={handleChange} /> Participents
                 </label>
                 <label>
-                    <input type="checkbox" name="role" value="TEACHER" onChange={handleChange} /> TEACHER
+                    <input type="checkbox" name="role" value="TEACHER" onChange={handleChange} /> Quiz Creator
                 </label>
             </div>
         </div>

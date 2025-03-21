@@ -1,5 +1,5 @@
 import "../css/header.css"
-import ProfileImage from "../assets/react.svg";
+// import ProfileImage from "../assets/loginphoto.avif";
 import React from "react";
 
 export default function Header() {
@@ -16,7 +16,7 @@ export default function Header() {
           <button className="header-button">
           </button>
             <div className="user-profile">
-                <img src={ProfileImage} alt="Profile"/>
+                {/*<img src={ProfileImage} alt="Profile"/>*/}
             </div>
         </div>
       </div>
