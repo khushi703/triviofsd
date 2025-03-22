@@ -1,0 +1,177 @@
+.register
+{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+/* Register Container */
+.register-container {
+    color: rgba(243, 244, 246, 1);
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(18, 12, 26, 0.3); 
+    text-align: center;
+    border: 1px solid #444c56;
+    border-radius: 5px;
+        width: 20vw;
+    max-width: 400px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
+    word-break: break-word;
+}
+
+/* Input Groups */
+.input-group {
+    margin-bottom: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #ccc;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 8px;
+    border: 1px solid #444c56;
+    border-radius: 5px;
+    background-color: #a4a8b3;
+    color: #000000;
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+input:focus {
+    outline: none;
+    border-color: #59a3eb;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+}
+
+/* Role Selection */
+.role-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.role-group label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #ccc;
+    display: block;
+}
+
+.checkbox-group {
+    display: flex;
+    justify-content:space-around;
+}
+
+.checkbox-group label {
+    display: flex;
+    /*align-items: right;*/
+    font-size: 14px;
+    color: #fff;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+    accent-color: #3498db;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #2980b9;
+    transform: scale(1.02);
+}
+
+/* Google Sign-In Button */
+.social-login {
+    width: 50%;
+    margin-top: auto;
+    font-size: 14px;
+    color: #fff; /* Matches text theme */
+    background: none; /* Removed background color */
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.social-login:hover {
+    opacity: 0.9;
+    transform: translateY(-3px);
+}
+/* Error Message */
+.error-message {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+/* Separator */
+.separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.separator span {
+    padding: 0 10px;
+    color: #aaa;
+    z-index: 1;
+}
+
+.separator::before,
+.separator::after {
+    content: '';
+    height: 1px;
+    flex: 1;
+    background-color: #444c56;
+}
+#user-profile-info{
+    margin-bottom: 50px;
+}

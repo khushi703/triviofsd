@@ -1,0 +1,274 @@
+/* General Styling */
+.page-container {
+    font-family: "Poppins", sans-serif;
+    background-color: #191d1900;
+    /*background: linear-gradient(135deg, #1e3c72, #2a5298);*/
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin-top: 10px;
+    padding: 60px;
+    box-sizing: border-box;
+    margin-left: 250px;
+}
+
+/* Container for Result */
+.result-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 90px;
+    padding-left: 300px;
+    padding-right: 300px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    margin: auto; /* Ensures proper centering */
+}
+
+/* Trophy Section */
+.trophy-container {
+    position: relative;
+    width: 96px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.trophy-circle {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.trophy-progress {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    transform: rotate(-45deg);
+}
+
+.trophy-progress.score-high {
+    border-top-color: #4ade80; /* green */
+}
+
+.trophy-progress.score-medium {
+    border-top-color: #facc15; /* yellow */
+}
+
+.trophy-progress.score-low {
+    border-top-color: #f87171; /* red */
+}
+
+.trophy-icon {
+    font-size: 40px;
+    z-index: 1;
+}
+
+/* Heading */
+.result-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Score Card */
+.score-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.total-score {
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.score-value {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.score-value.score-high {
+    color: #4ade80; /* green */
+}
+
+.score-value.score-medium {
+    color: #facc15; /* yellow */
+}
+
+.score-value.score-low {
+    color: #f87171; /* red */
+}
+
+.score-label {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 1s ease-in-out;
+}
+
+.progress-bar.score-high {
+    background-color: #4ade80; /* green */
+}
+
+.progress-bar.score-medium {
+    background-color: #facc15; /* yellow */
+}
+
+.progress-bar.score-low {
+    background-color: #f87171; /* red */
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.stat-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.stat-value {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.correct-value {
+    color: #4ade80; /* green */
+}
+
+.wrong-value {
+    color: #f87171; /* red */
+}
+
+.correct-icon {
+    color: #4ade80; /* green */
+}
+
+.wrong-icon {
+    color: #f87171; /* red */
+}
+
+/* Time Card */
+.time-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.time-label {
+    opacity: 0.7;
+}
+
+.time-value {
+    font-weight: bold;
+}
+
+.time-icon {
+    color: #ffcc00;
+}
+
+/* Button Styling */
+.home-button {
+    background-color: #ffcc00;
+    color: #333;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.home-button:hover {
+    background-color: #e6b800;
+    transform: scale(1.05);
+}
+
+/* Icons */
+.icon {
+    display: inline-block;
+}
+
+/* Loading State */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+.loading-text {
+    font-size: 20px;
+    color: white;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
