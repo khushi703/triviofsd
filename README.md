@@ -1,7 +1,7 @@
 # Quiz Web Application 🎯
 
 ## Overview
-This is a web-based quiz application built using Spring Boot, MySQL, React.js, JavaScript, and CSS. The application features *JWT-based authentication* with *role-based access control, allowing different functionalities for **students* and *quiz creators*.
+This is a web-based quiz application built using Spring Boot, MySQL, React.js, JavaScript, and CSS. The application features *JWT-based authentication* with role-based access control, allowing different functionalities for *students* and *quiz creators*.
 
 ## Features 🚀
 ### 1. *User Authentication 🔐*
